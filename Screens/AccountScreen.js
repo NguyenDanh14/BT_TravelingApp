@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { TextInput } from 'react-native-web';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text,Image, View, TouchableOpacity } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import { useState } from 'react';
 
@@ -62,6 +62,33 @@ const AccountScreen = ({ navigation }) => {
       </View>
       <View style={styles.style5}>
         <Text style={styles.TextOr}>or</Text>
+      </View>
+{/* Apple */}
+      <View style={styles.style6}>
+      <TouchableOpacity style={styles.buttonContinueWithApple} >
+        <Image source={require('../assets/DATA/apple.png')} style={styles.iconStyle}/>
+        <Text style={styles.buttonText1}>Continue with Apple</Text>
+      </TouchableOpacity>
+   {/* Facebook */}
+      <TouchableOpacity style={styles.buttonContinueWithFB}>
+      <Image source={require('../assets/DATA/facebook.png')} style={styles.iconStyle}/>
+         <Text style={styles.buttonText2}>Continue with Facebook</Text>
+      </TouchableOpacity>
+ {/* Google */}
+      <TouchableOpacity style={styles.buttonContinueWithGoogle} >
+      <Image source={require('../assets/DATA/google.png')} style={styles.iconStyle}/>
+         <Text style={styles.buttonText3}>Continue with Google</Text>
+      </TouchableOpacity>
+      </View>
+      <View style={styles.style7}> 
+            <Text style={styles.textNote}>By signing up, you agree to our </Text>
+         <Text style={styles.textNote}>
+            <Text style={{textDecorationLine: 'underline'}}>Terms of Service</Text> and{' '}
+            <Text style={{textDecorationLine: 'underline'}}>Privacy Policy</Text>
+        </Text>
+      </View>
+      <View style={styles.style8}> 
+          <Text style={styles.textQuestionAccount}>Already had an account? <Text style={{textDecorationLine: 'underline', color:'#3b9eef'}}>Log in </Text> </Text>
       </View>
     </View>
   );
@@ -141,6 +168,76 @@ const styles = StyleSheet.create({
         style5:{
             alignItems:"center",
             marginTop:5
+        },
+        style6:{
+          marginTop:10
+
+        },
+        buttonContinueWithApple:{
+          width: '100%',
+          maxWidth: 350,
+          borderColor:"black",
+          borderWidth: 0.5,
+          borderRadius: 5,
+          paddingVertical: 12,
+          flexDirection: 'row', // Để căn chỉnh biểu tượng và văn bản nằm ngang
+          justifyContent: 'center', // Căn giữa nội dung
+          alignItems: 'center', // Căn giữa theo chiều dọc
+          marginTop: 10, 
+          marginLeft:20,
+        },
+        buttonContinueWithFB:{
+          width: '100%',
+          maxWidth: 350,
+          borderColor:'#3b9eef',
+          borderWidth: 0.5,
+          borderRadius: 5,
+          paddingVertical: 12,
+          flexDirection: 'row', // Để căn chỉnh biểu tượng và văn bản nằm ngang
+          justifyContent: 'center', // Căn giữa nội dung
+          alignItems: 'center', // Căn giữa theo chiều dọc
+          marginTop: 10, 
+          marginLeft:20
+        },
+        buttonContinueWithGoogle:{
+          width: '100%',
+          maxWidth: 350,
+          borderColor:'#d3403c',
+          borderWidth: 0.5,
+          borderRadius: 5,
+          paddingVertical: 12,
+         flexDirection: 'row', // Để căn chỉnh biểu tượng và văn bản nằm ngang
+          justifyContent: 'center', // Căn giữa nội dung
+          alignItems: 'center', // Căn giữa theo chiều dọc
+          marginTop: 10, 
+          marginLeft:20
+        },
+        buttonText1:{
+          color: 'black',
+          fontWeight:500,
+        },
+        buttonText2:{
+          color: '#3b9eef',
+          fontWeight:500
+        },
+        buttonText3:{
+          color: '#d3403c',
+          fontWeight:500
+        },
+        style7:{
+          alignItems:'center',
+          marginTop:20
+        },
+        textNote:{
+          color:'gray',
+          fontSize:12
+        },
+        style8:{
+          alignItems:'center',
+          marginTop:150
+        },
+        iconStyle:{
+          marginRight: 5
         }
     })
     
